@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>SISTEMA DE PARQUEOS</title>
+  <style>
+    body {
+      background-image: url('https://i.postimg.cc/1t5H1syL/park.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .status {
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+    }
+    .libre {
+      background-color: green;
+    }
+    .ocupado {
+      background-color: red;
+    }
+  </style>
+  <script>
+    function actualizarEstado() {
+      // Simulación de datos para cada parqueo
+      let estados = [
+        "<span class='status ocupado'>Ocupado</span>",
+        "<span class='status libre'>Libre</span>",
+        "<span class='status ocupado'>Ocupado</span>",
+        "<span class='status libre'>Libre</span>",
+        "<span class='status ocupado'>Ocupado</span>",
+        "<span class='status libre'>Libre</span>",
+        "<span class='status ocupado'>Ocupado</span>",
+        "<span class='status libre'>Libre</span>"
+      ];
+
+      // Actualizar cada parqueo en la página
+      for (let i = 1; i <= 8; i++) {
+        document.getElementById('parqueo' + i).innerHTML = estados[i - 1];
+      }
+    }
+
+    setInterval(actualizarEstado, 1000); // Actualizar cada 1 segundo
+  </script>
+</head>
+<body onload="actualizarEstado()">
+  <h1 style="color: #5e9ca0;">Rodolfo's SmartPark SA</h1>
+  <h1 style="color: #5e9ca0;">Innovacion y Comodidad en Cada Espacio</h1>
+  <h3>PARQUEO 1: <span id="parqueo1" class="status libre">Libre</span></h3>
+  <h3>PARQUEO 2: <span id="parqueo2" class="status libre">Libre</span></h3>
+  <h3>PARQUEO 3: <span id="parqueo3" class="status libre">Libre</span></h3>
+  <h3>PARQUEO 4: <span id="parqueo4" class="status libre">Libre</span></h3>
+  <h3>PARQUEO 5: <span id="parqueo5" class="status libre">Libre</span></h3>
+  <h3>PARQUEO 6: <span id="parqueo6" class="status libre">Libre</span></h3>
+  <h3>PARQUEO 7: <span id="parqueo7" class="status libre">Libre</span></h3>
+  <h3>PARQUEO 8: <span id="parqueo8" class="status libre">Libre</span></h3>
+</body>
+</html>
